@@ -1,0 +1,27 @@
+h2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+h2:after {
+  display: inline-block;
+  margin: 0 0 8px 20px;
+  height: 3px;
+  content: ' ';
+  text-shadow: none;
+  background-color: #999;
+  width: 140px;
+}
+h2:before {
+  display: inline-block;
+  margin: 0 20px 8px 0;
+  height: 3px;
+  content: ' ';
+  text-shadow: none;
+  background-color: #999;
+  width: 140px;
+}
+/* li.gua-text {
+  background: transparent url(https://www.kinderenkoning.be/media/wysiwyg/logos/checkmark.png) no-repeat left center;
+} */

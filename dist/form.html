@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="" alt="" style="border: 2px solid #ddd;border-radius: 5px" />
+    <h2>Verstuur reactie</h2>
+    <form>
+      <ul>
+        <li>
+          <label for="name" class="required">Naam<em>*</em></label>
+          <input
+            name="user"
+            id="user"
+            value=""
+            title="Naam"
+            class="required-entry input-text"
+            type="text"
+            style="width:70%"
+          />
+        </li>
+        <li>
+          <label for="email" class="required">E-mail<em>*</em></label>
+          <input
+            name="email"
+            id="email"
+            value=""
+            title="E-mail"
+            class="required-entry input-text validate-email"
+            type="text"
+            style="width:70%"
+          />
+        </li>
+        <li style="margin: 20px 0px -20px 2px">
+          <label for="comment" class="required">Reactie<em>*</em></label>
+          <textarea
+            name="comment"
+            id="comment"
+            title="Reactie"
+            class="required-entry input-text"
+            style="height:150px;width:95%;"
+            cols="50"
+            rows="5"
+          ></textarea>
+        </li>
+      </ul>
+      <ul>
+        <input name="post_id" type="hidden" value="45" />
+        <p class="required">* Verplichte velden</p>
+        <button class="button form-button" type="submit">
+          <span><span>Verstuur reactie</span></span>
+        </button>
+      </ul>
+    </form>
+  </body>
+</html>

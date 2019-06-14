@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -8,6 +15,371 @@
     <title>Document</title>
   </head>
   <body>
-    <h class="large">hello everyone!!</h>
+    <script src="js/main.js"></script>
+    <h1>index</h1>
+    <nav class="navbar navbar-inverse"></nav>
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active"
+            id="list-home-list"
+            data-toggle="list"
+            href="#list-home"
+            role="tab"
+            aria-controls="home"
+          >
+            <span><i class="fas fa-heart"></i>Home</span>
+          </a>
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-profile-list"
+            data-toggle="list"
+            href="#list-profile"
+            role="tab"
+            aria-controls="profile"
+            >Profile</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-messages-list"
+            data-toggle="list"
+            href="#list-messages"
+            role="tab"
+            aria-controls="messages"
+            >Messages</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-settings-list"
+            data-toggle="list"
+            href="#list-settings"
+            role="tab"
+            aria-controls="settings"
+            >Settings</a
+          >
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="list-home"
+            role="tabpanel"
+            aria-labelledby="list-home-list"
+          ></div>
+          <div
+            class="tab-pane fade"
+            id="list-profile"
+            role="tabpanel"
+            aria-labelledby="list-profile-list"
+          ></div>
+          <div
+            class="tab-pane fade"
+            id="list-messages"
+            role="tabpanel"
+            aria-labelledby="list-messages-list"
+          ></div>
+          <div
+            class="tab-pane fade"
+            id="list-settings"
+            role="tabpanel"
+            aria-labelledby="list-settings-list"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row row-bottom-gutter">
+      <div class="col-md-4">Column example</div>
+      <div class="col-md-4">Column example</div>
+      <div class="col-md-4">Column example</div>
+    </div> -->
+    <h1 class="page-title">Garantie</h1>
+    <div class="row row-bottom-gutter">
+      <div class="col-md-2">
+        <h4 class="heading">Service client</h4>
+        <ul class="service-links">
+          <li>test</li>
+          <li>testing</li>
+          <li>testingggg</li>
+          <li>testooo</li>
+          <li>Lorem</li>
+          <li>testddd</li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <h3 class="heading">Garantie legale de 2 ans</h3>
+        <p>
+          Vous achetez un produit auprès d’un commerçant 1999/44/CE.
+        </p>
+        <p>
+          La garantie légale de 2 ans est valable pour tous les biens matériels.
+        </p>
+        <p>
+          La garantie légale de 2 ans s’applique à tout défaut de conformité du.
+        </p>
+        <ul class="disc">
+          <li>
+            test...
+          </li>
+          <li>
+            test
+          </li>
+          <li>
+            test
+          </li>
+        </ul>
+        <p>
+          Vous rencontrez un problème avec votre produit ? Signalez-le
+          <strong>rapidement</strong> au vendeur
+        </p>
+        <p>
+          Vous pouvez exiger du vendeur, à moins que cela ne soit impossible ou
+          disproportionné, :la réparation ou le remplacement
+        </p>
+        <p>
+          La garantie légale est sans frais pour l’acheteur.
+        </p>
+        <h3 class="heading">
+          Que faire en cas d'article défectueux sous garantie?
+        </h3>
+        <p>
+          Votre article est-il endommagé après une utilisation normale et.
+        </p>
+        <ul class="disc">
+          <li>
+            this is a testing.
+          </li>
+          <li>
+            Nous contactons l'usine et déterminons ensemble la meilleure
+            solution ainsi que la plus rapide.
+          </li>
+          <li>
+            Nous contactons l'usine et déterminons, en consultation, la solution
+            la plus rapide et la meilleure.
+          </li>
+          <li>Nous vous en informerons par e-mail.</li>
+        </ul>
+        <h3 class="heading">
+          Que faire avec un article endommagé par le transport?
+        </h3>
+        <p>
+          Dans un premier temps, nous vous conseillons de refuser la livraison
+          d'un article présentant des dommages évidents lors du transport. Vous
+          n'acceptez pas la livraison. L'article nous sera retourné.
+        </p>
+        <p>
+          Ensuite, informez-nous par e-mail
+        </p>
+        <p>
+          En cas de refus, nous pouvons immédiatement vous envoyer un nouvel
+          article. Sauf si ce n'est pas en stock.
+        </p>
+        <p>
+          Avez-vous quand même accepté votre colis et constatez-vous seulemen
+        </p>
+        <p>
+          Dans ce cas, nous devons ouvrir une réclamation auprès du
+          transporteur. Nous vous fournirons une étiquette de retour gratuite
+          avec laquelle vous pourrez retourner l'article défectueux. Veuillez
+          vous assurer que l'article est correctement emballé et qu'aucun
+          dommage supplémentaire ne se produit pendant le retour.
+        </p>
+        <p>
+          Nous ne vous enverrons un nouvel article que si nous pouvons voir que
+          l’article défectueux a bien été expédié. Ceci afin d'éviter que vous
+          ne soyez en possession de 2 articles. La vérification est effectuée en
+          vérifiant le statut de l'étiquette de retour.
+        </p>
+        <h3 class="heading">
+          Combien de temps dois-je attendre pour les pièces de rechange?
+        </h3>
+        <ul class="disc">
+          <li>
+            Si la pièce de rechange est en stock chez nous, elle peut être
+            expédiée immédiatement.
+          </li>
+          <li>
+            Si la pièce de rechange est en stock à l'usine, ils vous l'enverront
+            directement.
+          </li>
+          <li>
+            Si la pièce de rechange n'est pas en stock à l'usine, elle sera
+            expédiée dès qu'elle sera à nouveau disponible.
+          </li>
+        </ul>
+        <h3 class="heading">
+          Mon article est défectueux. Est-ce toujours remplacé?
+        </h3>
+        <ul class="disc">
+          <li>
+            Un article défectueux sous utilisation normale, dans le cadre de la
+            garantie légale: réparation ou remplacement gratuit.
+          </li>
+          <li>
+            Un article défectueux sous utilisation normale, en dehors de la
+            garantie légale: réparation ou remplacement possible; aux frais du
+            client.
+          </li>
+          <li>
+            Un article défectueux par sa propre faute, dans ou en dehors de la
+            garantie légale: réparation ou remplacement possible; aux frais du
+            client.
+          </li>
+        </ul>
+        <p>Pourvu que l'article soit toujours disponible.</p>
+      </div>
+    </div>
+    <div class="row row-bottom-no-gutter">
+      <div class="col-md-4">
+        <h4 class="heading">Contactez nous</h4>
+        <div class="contact-options">
+          <div class="contact-icon">
+            <span class="ic ic-2x fa fa-phone"></span>
+          </div>
+          <div class="contact-body">
+            <p>
+              <strong
+                >Appeler
+                {{config path="general/store_information/phone"}}</strong
+              ><br />Réponse directe
+            </p>
+          </div>
+          <div class="contact-icon">
+            <span class="ic ic-2x fa fa-envelope"></span>
+          </div>
+          <div class="contact-body">
+            <p>
+              <strong
+                >Mail à
+                {{config path="trans_email/ident_general/email"}}</strong
+              ><br />Réponse dans les 24h (ouvrables)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="heading">Point d'enlèvement eWINGS</h4>
+        <div class="contact-options">
+          <div class="contact-icon">
+            <span class="ic ic-2x fa fa-map-marker"></span>
+          </div>
+          <div class="contact-body">
+            <p>
+              <strong>Récupérez votre commande dans notre entrepôt</strong
+              ><br />Veldkant 39, 2550 Kontich (BE)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="heading">Heures d'ouverture</h4>
+        <p>
+          Nous sommes ouverts tous les jours de la semaine de
+          <strong>8h30 à 12h00</strong> et de <strong>13h00 à 17h30</strong>.
+          Nous sommes fermés le week-end et les jours fériés.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="ban">
+          <img
+            class="image"
+            src="https://loremflickr.com/320/240/dog"
+            alt="Banner 1"
+          />
+          <span class="oi oi-heart" style="background-color:red"></span>testinggg</span
+          >
+          <p>shitrrrrrrr</p>
+          <p>shitrrzzzzzzz</p>
+          <p>shlalalalalait</p>
+          <p>shipppapaqpapat</p>
+          <p>shmqmsmmsmsbvvffmfmit</p>
+          <p>shit</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="ban">
+          <img
+            class="image"
+            src="https://loremflickr.com/320/240/dog"
+            alt="Banner 1"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="item">
+        <div class="ban">
+                <img class="image" src="https://loremflickr.com/320/240/dog" />
+        </div>
+   </div>
+   <div class="item">
+      <div class="item">
+          <div class="ban">
+                  <img class="image" src="https://loremflickr.com/320/240/dog" />
+          </div>
+     </div>
+   </div>
+   <div class="item">
+      <div class="ban">
+          <img class="image" src="https://loremflickr.com/320/240/dog" />
+          <div class="cap cap-top-left cap-no-bg cap-text-bg cap-text-bg-dark-1">
+                  <h3 class="text" data-animate-in="fadeInRight">Caption Example</h3>
+                  <p class="text" data-animate-in="fadeInRight delay-1">This is a line of text</p>
+                  <p class="text" data-animate-in="fadeInRight delay-2">Second line of text</p>
+     </div>
+     </div>
+   </div>
+   <div class="row row-bottom-gutter-half">
+      <div class="col-md-12 small-banner">
+              This is unit 1...
+      </div>
+      <div class="col-md-12 small-banner">
+              This is unit 2...
+      </div>
+      <div class="col-md-12 small-banner">
+              This is unit 3...
+      </div>
+ </div>
+    <span class="oi oi-heart"></span>
+    <div class="cap cap-top-left cap-no-bg cap-text-bg cap-text-bg-dark-1">
+        <h3 class="text" data-animate-in="fadeInRight">Caption Example</h3>
+        <p class="text" data-animate-in="fadeInRight delay-1">This is a line of text</p>
+        <p class="text" data-animate-in="fadeInRight delay-2">Second line of text</p>
+</div>
+<div class="row row-bottom-gutter-half">
+    <div class="col-md-12 small-banner">
+            This is unit 1...
+    </div>
+    <div class="col-md-12 small-banner">
+            This is unit 2...
+    </div>
+    <div class="col-md-12 small-banner">
+            This is unit 3...
+    </div>
+</div>
+<div
+		class="cap cap-top-right cap-puch-down-10 cap-push-left-10 cap-no-bg cap-text-bg-light-1"
+	>
+		<h2
+			class="text"
+			style="font-size: 36px"
+			data-animate-in="fadeInUp delay-0-5"
+		>
+			Speelhuisjes
+		</h2>
+		<p class="text" data-animate-in="fadeInUp delay-1">
+			Uren speelplezier in je kartonnen stekje!
+		</p>
+		<p class="text" data-animate-in="fadeInUp delay-1-5">
+			Ontdek alle speelhuisjes
+		</p>
+	</div>
   </body>
 </html>
+<!-- <a class="home-block" href="https://pap-nl.ewings.be/pap_nl/kartonnen-speelhuisjes">
+<div class="ban">
+    <img src="{{media url="wysiwyg/paprepod/homepage/New_Project_7_.jpg"}}" alt="speelhuisjes" />
+</div>
+</a> -->

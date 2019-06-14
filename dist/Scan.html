@@ -1,0 +1,169 @@
+<!-- https://github.com/yushulx/zxing-cpp-emscripten/commit/d81ad020cdf94ec9d8a08a2ceb617bffcabe2962 -->
+
+<h2 class="clerk-slider-title" style="color:#216B7A">{{ headline }}</h2>
+
+<ul id="{{ $id }}" class=":target clerk-slider category-slider"></ul>
+
+<!-- This code creates the slider by its ID. -->
+<script type="text/javascript">
+    Clerk.ui.slider("#{{ $id }}").init();
+</script>
+
+<h2 class="clerk-slider-title">Alle producten in deze categorie</h2>
+
+/* .nav-panel-inner
+  .nav-block--center
+  .grid12-12
+  .level0
+  .nav-submenu
+  .nav-submenu--mega
+  .dd-itemgrid
+  .dd-itemgrid-6col
+  .nav-item
+  .level1
+  .nav-1-1
+  .first
+  .nav-item--only-subcategories
+  .parent
+  a
+  span {
+  color: red !important;
+} */
+/* .nav-block--center .grid12-12 a span::after {
+  color: #216b7a;
+} */
+/* .nav-regular:not(.nav-vert) .nav-item.level0.active > a:hover {
+	background-color: #216b7a !important;
+} */
+
+De algemene voorwaarden kan u hier vinden: <a "_blank" href="https://www.kinderenkoning.be/knk_nl_be/algemene-voorwaarden">Algemene voorwaarden</a>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>testing</h1>
+    <div>test result: <span id="dbr"></span></div>
+    <div class="select">
+      <label for="videoSource">Video source: </label
+      ><select id="videoSource"></select>
+    </div>
+    <button id="go">test Barcode</button>
+    <div>
+      <video muted autoplay id="video"></video>
+      <canvas
+        id="pcCanvas"
+        width="640"
+        height="480"
+        style="display: none; float: bottom;"
+      ></canvas>
+      <canvas
+        id="mobileCanvas"
+        width="240"
+        height="320"
+        style="display: none; float: bottom;"
+      ></canvas>
+    </div>
+
+    <!-- //script -->
+
+    <script>
+      function myfunction() {
+        console.log(1 + 2);
+      }
+
+      var tick = function() {
+        if (window.ZXing) {
+          ZXing = ZXing();
+          testZXing();
+        } else {
+          setTimeout(tick, 10);
+        }
+      };
+      tick();
+
+      function testZXing() {
+        var img = new Image();
+        img.src = 'Qr-10.png';
+        img.onload = function() {
+          var width = Math.floor(this.width),
+            height = Math.floor(this.height);
+
+          var canvas = document.createElement('canvas');
+          canvas.style.display = 'block';
+          canvas.width = width;
+          canvas.height = height;
+          var ctx = canvas.getContext('2d');
+          // ctx.rotate(Math.random()*0.1-0.05);
+          ctx.drawImage(this, 0, 0, width, height);
+          var imageData = ctx.getImageData(0, 0, width, height);
+          var idd = imageData.data;
+          document.body.appendChild(canvas);
+
+          var decodeCallback = function(ptr, len, resultIndex, resultCount) {
+            var result = new Uint8Array(ZXing.HEAPU8.buffer, ptr, len);
+            window.resultString = String.fromCharCode.apply(null, result);
+          };
+          var decodePtr = ZXing.Runtime.addFunction(decodeCallback);
+
+          var image = ZXing._resize(width, height);
+
+          for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+            ZXing.HEAPU8[image + j] = idd[i];
+          }
+
+          var err = ZXing._decode_qr(decodePtr);
+
+          console.log('error code', err);
+          console.log('result', window.resultString);
+
+          document.body.appendChild(
+            document.createTextNode(err ? 'error: ' + err : window.resultString)
+          );
+
+          for (var k = 0; k < 50; k++) {
+            for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+              ZXing.HEAPU8[image + j] = idd[i];
+            }
+            err = ZXing._decode_qr_multi(decodePtr);
+            err = ZXing._decode_qr(decodePtr);
+          }
+
+          console.time('decode QR');
+          for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+            ZXing.HEAPU8[image + j] = idd[i];
+          }
+          err = ZXing._decode_qr(decodePtr);
+          console.timeEnd('decode QR');
+
+          console.time('decode QR multi');
+          for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+            ZXing.HEAPU8[image + j] = idd[i];
+          }
+          err = ZXing._decode_qr_multi(decodePtr);
+          console.timeEnd('decode QR multi');
+
+          console.time('decode any');
+          for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+            ZXing.HEAPU8[image + j] = idd[i];
+          }
+          err = ZXing._decode_any(decodePtr);
+          console.timeEnd('decode any');
+
+          console.time('decode multi');
+          for (var i = 0, j = 0; i < idd.length; i += 4, j++) {
+            ZXing.HEAPU8[image + j] = idd[i];
+          }
+          err = ZXing._decode_multi(decodePtr);
+          console.timeEnd('decode multi');
+        };
+      }
+    </script>
+    <!-- <script async src="zxing.js"></script> -->
+  </body>
+</html>
